@@ -100,9 +100,10 @@
   \renewcommand{\documentversion}{Versão}
   \renewcommand{\documentclassification}{Classificação}
   \renewcommand{\titlename}{Título}
-  \renewcommand{\authorstitle}{Autores}
+  \renewcommand{\authorstitle}{Autor}
   \renewcommand{\externalauthorstitle}{Autores parceiros}
-  \renewcommand{\mainsubsubtitle}{Relatório~\imprimirtiporelatorio~do Projeto~\imprimirnomeprojeto}
+  % \renewcommand{\mainsubsubtitle}{Relatório~\imprimirtiporelatorio~do Projeto~\imprimirnomeprojeto}
+  \renewcommand{\mainsubsubtitle}{Laboratório de Robótica e Sistemas Autônomos - RoSA}
   %\renewcommand{\mainheadertitlename}{\MakeUppercase{PRODUÇÃO TÉCNICA BIR}}
   \renewcommand{\techprodsimple}{PROD. TEC. BIR }
   \renewcommand{\bibname}{REFERÊNCIAS }
