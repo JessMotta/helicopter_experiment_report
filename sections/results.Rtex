@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amssymb,amsmath,mathrsfs}
+
+\begin{document}
+O modelo linear encontrado, considerando a interação entre dois elementos, é disposto a seguir.
+
+<<echo=FALSE, cache=TRUE>>=
+
+helicoptero <- expand.grid(clipe = gl(2,1, labels = c("+","-")), altura = gl(2,1, labels = c("+","-")), ad_top = gl(2,1, labels = c("+","-")), ad_left = gl(2,1, labels = c("+","-")), 
+                           ad_right = gl(2,1, labels = c("+","-")), score = NA)
+
+score <- c(1.63, 1.17, 1.86, 1.32, 1.73, 1.25, 1.58, 1.44, 1.68, 1.35, 2.04, 1.42, 1.55, 1.23, 1.91, 1.5, 1.74, 1.32, 1.83, 1.4, 1.71, 1.52, 1.92, 1.36, 1.75, 1.3, 1.82, 1.31, 1.7, 1.1, 1.57, 1.27)
+helicoptero$score <- score
+ordem <- c(15,16,13,14,19,20,17,18,9,10,11,12,21,22,23,24,29,30,31,32,27,28,25,26,5,6,7,8,3,4,1,2)
+helicoptero$ord <- ordem
+helicoptero <- helicoptero[order(helicoptero$ord),]
+helicoptero$ord <- NULL
+
+helicoptero.model2 <- lm(score ~ (altura + clipe + ad_top + ad_left + ad_right) +
+                          altura * clipe + 
+                          altura * ad_top +
+                          altura * ad_left +
+                          altura * ad_right+
+                          clipe * ad_top +
+                          clipe * ad_left +
+                          clipe * ad_right +
+                          ad_top * ad_left + 
+                          ad_top * ad_right + 
+                          ad_left * ad_right,
+                        data = helicoptero)
+
+summary(helicoptero.model2)
+
+@
+
+Pode-se observar que para este modelo os elementos que possuem importância estatística, ou seja Pr $<$ 0.05 sâo: altura (Pr = 0.03151), clipe (Pr = 6.36e-05), ad\_right (Pr = 0.03151) e ad\_left:ad\_right (Pr = 0.00901). 
+
+Considerando os elementos de importância estatística, a equação que representa o modelo é descrita da seguinte forma:
+
+\begin{center}
+$
+  score = mean(scores) + \dfrac{coef(altura)}{2}altura + \dfrac{coef(clipe)}{2}clipe + \dfrac{coef(ad\_right)}{2}ad\_right +  \dfrac{ad\_left:ad\_right}{2}ad\_left:ad\_right
+$  
+\end{center}
+
+Desta forma, fazendo as devidas substituições, temos que:
+
+\begin{center}
+  $
+    score = \Sexpr{mean(helicoptero$score)} + \dfrac{\Sexpr{coef(helicoptero.model2)[2]}}{2}altura + \dfrac{\Sexpr{coef(helicoptero.model2)[3]}}{2}clipe + \dfrac{\Sexpr{coef(helicoptero.model2)[6]}}{2}ad\_right +  \dfrac{\Sexpr{coef(helicoptero.model2)[16]}}{2}ad\_left:ad\_right
+  $  
+
+  $ score = \Sexpr{mean(helicoptero$score)} + 0.0931altura- 0.2119clipe + 0.0931ad\_right - 0.105ad\_left:ad\_right$
+
+  $score\_max =  \Sexpr{mean(helicoptero$score)} + 0.0931*(1)- 0.2119*(-1) + 0.0931*(1) - 0.105*(-1) = 2.04$
+
+  $score\_min =  \Sexpr{mean(helicoptero$score)} + 0.0931*(-1)- 0.2119*(1) + 0.0931*(-1) - 0.105*(1) = 1.04$
+  \end{center}
+
+\end{document}
