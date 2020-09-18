@@ -1,0 +1,72 @@
+%SEÇÃO 1----------------------------------------------
+\section*{INTRODUÇÃO}
+
+Este documento tem como objetivo analisar um experimento estatístico sobre um modelo de helicóptero de papel. 
+Durante o processo, foi medido o seu tempo de queda em duas alturas diferentes, 1,30 m e 2,10 m, 
+ além disto, 
+para alterar o seu desempenho, pedaços de fita foram colados em seu corpo e hélices e um clipe foi adicionado em sua parte inferior a fim de verificar a influência da variação destes parâmetros no resultado final. Para variar o valor. 
+O procedimento resultou em trinta e duas combinações distintas conforme vistas na tabela \ref{tab:dados_experimento} .
+
+Para realizar o estudo estatístico dos dados foi utilizada a ferramenta R, uma linguagem de programação voltada à manipulação, 
+análise e visualização de dados.
+
+
+    \begin{table}[H]
+        \centering
+        \caption{Dados do experimento.}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \rowcolor[HTML]{EFEFEF} 
+        \textbf{Clipe} & \textbf{Altura} & \textbf{Ad\_top} & \textbf{Ad\_left} & \textbf{Ad\_right} & \textbf{Score} \\ \hline
+        +              & -               & -                & -                 & -                  & 1,57           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & -               & -                & -                 & -                  & 1,27           \\ \hline
+        +              & +               & -                & -                 & -                  & 1,70           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & +               & -                & -                 & -                  & 1,10           \\ \hline
+        +              & +               & +                & -                 & -                  & 1,75           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & +               & +                & -                 & -                  & 1,30           \\ \hline
+        +              & -               & +                & -                 & -                  & 1,82           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & -               & +                & -                 & -                  & 1,31           \\ \hline
+        +              & +               & +                & -                 & +                  & 1,68           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & +               & +                & -                 & +                  & 1,35           \\ \hline
+        +              & -               & +                & -                 & +                  & 2,04           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & -               & +                & -                 & +                  & 1,42           \\ \hline
+        +              & -               & +                & +                 & +                  & 1,86           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & -               & +                & +                 & +                  & 1,32           \\ \hline
+        +              & +               & +                & +                 & +                  & 1,63           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & +               & +                & +                 & +                  & 1,17           \\ \hline
+        +              & -               & -                & +                 & +                  & 1,58           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & -               & -                & +                 & +                  & 1,44           \\ \hline
+        +              & +               & -                & +                 & +                  & 1,73           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & +               & -                & +                 & +                  & 1,25           \\ \hline
+        +              & +               & -                & -                 & +                  & 1,55           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & +               & -                & -                 & +                  & 1,23           \\ \hline
+        +              & -               & -                & -                 & +                  & 1,91           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & -               & -                & -                 & +                  & 1,50           \\ \hline
+        +              & -               & -                & +                 & -                  & 1,92           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & -               & -                & +                 & -                  & 1,36           \\ \hline
+        +              & +               & -                & +                 & -                  & 1,71           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & +               & -                & +                 & -                  & 1,52           \\ \hline
+        +              & +               & +                & +                 & -                  & 1,74           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & +               & +                & +                 & -                  & 1,32           \\ \hline
+        +              & -               & +                & +                 & -                  & 1,83           \\ \hline
+        \rowcolor[HTML]{EFEFEF} 
+        -              & -               & +                & +                 & -                  & 1,40           \\ \hline
+        \end{tabular}
+        \label{tab:dados_experimento}
+        % \caption*{Autoria própria.}
+    \end{table}

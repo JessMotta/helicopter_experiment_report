@@ -15,7 +15,7 @@
 % classe memoir . options                                                   
 12pt,					% tamanho da fonte
 openright,				% cap. começam em pág ímpar (ins pág vazia caso preciso)
-oneside,				% para impressão em verso e anverso. Oposto a oneside
+twoside,				% para impressão em verso e anverso. Oposto a oneside
 a4paper,				% tamanho do papel
 % --------------------------------------------------------------------------
 % classe abntex2 . options                                                  
@@ -35,7 +35,7 @@ brazil
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
 \usepackage{color}				% Controle das cores
-%\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
 \usepackage{lipsum}	
 \usepackage[brazilian,hyperpageref]{backref} % páginas com citações na bibliog.
@@ -63,7 +63,7 @@ brazil
 %\usepackage{fontspec}
 %\setmainfont{Helvetica Light}
 \usepackage{lscape}
-% \usepackage[graphicx]{realboxes}
+%\usepackage[graphicx]{realboxes}
 \usepackage{rotating}
 \usepackage{wrapfig}
 \usepackage{caption}
@@ -73,10 +73,8 @@ brazil
 \usepackage{threeparttable}
 \usepackage{hyperref}
 %\hypersetup{draft}
-\usepackage{lettrine}
 \usepackage{float}
-\usepackage{lscape}
-\usepackage{adjustbox}
+
 %R - LATEX
 \makeatletter
 \def\maxwidth{ %
@@ -174,28 +172,27 @@ brazil
 \setlength{\parskip}{0.2cm} % parágrafo, tente também \onelineskip
 % --------------------------------------------------------------------------
 % Informações de dados para CAPA e FOLHA DE ROSTO                           
-% \prodtecnica{001 / 2020}
+\prodtecnica{001 / 2020}
 \titulo{Avaliação do Sistema de Medição - TIMON 2.5}
 % \tiporelatorio{Parcial} 
-% \nomeprojeto{Conceitual - UGV-C}
+% \nomeprojeto{Projeto}
 \outrossubtitulos{~} % opcional
 \autores{
 	Jéssica Lima Motta\\
 	Leonardo Mendes de Souza Lima\\
 	Miguel Felipe Nery Vieira\\
 	Vinícius José Gomes de Araujo Felismino\
-	
 }
 % \newcommand{\autoresexternos}{
-% 	Marco Antonio dos Reis\\
-% 	Rebeca Tourinho Lima\
+% 	John Marston\\
+% 	Frank West\
 % }
 \local{Salvador\\Bahia, Brasil}
-\data{Julho de 2020}
+\data{Setembro de 2020}
 % \classificacao{( ) Confidencial  (X) Restrito  ( )  Uso Interno  ( ) Público}
 % \revisao{01}
 % \tabelacutter{000} 
-% \palavraschave{1.Mobile Robots . 2. Disinfection. 3. Autonomous.}
+% \palavraschave{1. Manipulator. 2. Simulation. 3. Computer vision.}
 % \classificacaoassunto{000} % Número de Classificação do assunto 
 %\parceirologo{logos/x.png}
 %------------------------------------------------------------------
@@ -205,27 +202,6 @@ brazil
 %------------------------------------------------------------------              
 % Acrônimos :: Chamar no texto como \ac{DoF}                                
 \begin{acgroupdef}[list=acronyms]
-	% \acdef{AHP}{Analytic Hierarchy Process}
-	% \acdef{CPU}{Central Process Unit}
-	% \acdef{FPS}{Frames Per Second}
-	% \acdef{GPS}{Glopal Positioning System}
-	% \acdef{IDE}{Integrated Development Environment}
-	% \acdef{IMU}{Initial Measurement Unit}
-	% \acdef{INS}{Inertial Navigation System}
-	% \acdef{LCD}{Liquid Crystal Display}
-	% \acdef{LED}{Light-emitting Diode}
-	% \acdef{LIDAR}{Light Detection and Ranging}
-	% \acdef{PTZ}{Pan-Tilt-Zoom}
-	% \acdef{PWM}{Pulse Width Modulation}
-	% \acdef{QFD}{Quality Function Deployment}
-	% \acdef{ROS}{Robot Operating System}
-	% \acdef{RoSA}{Robótica e Sistemas Autônomos}
-	% \acdef{SLAM}{Simultaneous Localization and mapping}
-	% \acdef{SOTA}{Study of the State of the Art}
-	% \acdef{UART}{Universal Asynchrounous Receiver/Transmiter}
-	% \acdef{UGV}{Unmanned Ground Vehicle}
-	% \acdef{UV}{Ultravioleta}
-
 	% \acdef{DoF}{Degrees of Freedom}
 	% \acdef{PoC}{Proof of Concept, em português Prova de Conceito}
 	% \acdef{UUV}{Unmanned Underwater Vehicle, em português Veículo Subaquático Não-tripulado}
@@ -240,116 +216,14 @@ brazil
 \end{acgroupdef}
 % --------------------------------------------------------------------------
 % Criação do sumário
-% \makeindex
+\makeindex
 %
 \begin{document}
-	\begin{center}
-		\begin{figure}[htp]
-			\centering
-			\ifelsenotempty{\imprimirparceirologo}{
-				\raisebox{-0.5\height}{\includegraphics[height=1.2cm]{\imprimirparceirologo}}
-				\hspace{\fill}
-				\raisebox{-0.5\height}{\includegraphics[height=1.2cm]{logos/LogoFiebSenai.png}}
-			}{
-				\hspace{\fill}
-				\raisebox{-0.5\height}{\includegraphics[height=1.2cm]{logos/LogoFiebSenai.png}}
-			}
-		\end{figure}
-	\end{center}
-
-	% \frenchspacing
-	% \imprimircapa
-	\MakeUppercase{\textbf{\imprimirtitulo}}\\
-	\centering\small{\mainsubsubtitle}\\
-	\begin{flushright}
-		\imprimirautores		
-	\end{flushright}
+	\frenchspacing
+	\imprimircapa
 	% \imprimircatalografica
 % --------------------------------------------------------------------------
-% Sumário executivo                                                         
-% 	\ABNTEXchapterfont\large\textbf{\execsummarytitlename}
-% 	\begin{flushleft}
-% 		\normalsize
-% 		\justify
-% 		\normalfont
-% 		O projeto UGV-C, também conhecido como \textbf{CAPIVARA} se configura sob o Programa de Formação de Jovens Talentos do Laboratório de Robótica e Sistemas Autônomos do Senai Cimatec. Diante da forte demanda para implementação de soluções contra o virús chinês (COVID-19)em nossa sociedade, o Senai Cimatec firmou compromisso financeiro e humano para o desenvolvimento de plataformas robóticas utilizando em sua grande maioria componentes nacionalizados e de localização no Brasil, sendo assim o Senai Cimatec é o principal fomentador do projeto. O \textit{kick-off} do projeto foi no dia 15/06/2020. O prazo de execução foi planejado para 90 dias.
-% 	\end{flushleft}
-% 	\clearpage
-% %------------------------------------------------------------------
-% % Resumo e abstract                                                         
-% 	\ABNTEXchapterfont\large\textbf{\resumoatitlename}
-% 	\begin{flushleft}
-% 		\normalsize
-% 		\justify
-% 		\normalfont
-% 		Este documento explicita as etapas de concepção e idealização do UGV-CAPIVARA, robô móvel apresentado como solução para desinfeção de ambientes de forma autônoma em meio ao cenário de pandemia que surgiu devido ao novo coronavírus. Aqui encontram-se a tabela do \textit{Benchmarking} com as soluções do mercado que serviram como referencial para o desenvolvimento, a solução apresentada e os componentes que virão a ser utilizados e seus modelos simplificados de \textit{schematic} e arquitetura geral.
-% 		%resumo aqui
-% 		%
-% 		%
-% 		%
-% 		% todo retirar referência ao BIR >>> @marcoreis
 
-% 	\end{flushleft}
-% 	\vspace*{1cm}
-% 	\newpage
-% 	%
-% 	\ABNTEXchapterfont\large\textbf{\resumobtitlename}
-% 	\begin{flushleft}
-% 		\normalsize
-% 		\justify
-% 		\normalfont
-% 		This document explains the stages of conception and idealization of the UGV-CAPIVARA, a mobile robot presented as a solution for disinfecting environments autonomously in the midst of the pandemic scenario that arose due to the new coronavirus. Here you can find the Benchmarking table with market solutions that served as a reference for development, the solution presented and the components that will be used and its simplified schematic and general architecture models.
-% 		%abstract aqui
-% 		%
-% 		%
-% 		%
-% 	\end{flushleft}
-% 	\clearpage
-% --------------------------------------------------------------------------
-% Lista de figuras                                                          
-	% \begin{flushleft}
-	% 	\ABNTEXchapterfont\Large\textbf{\MakeUppercase\listadefigurasname}
-	% \end{flushleft}
-	% \vspace*{-36pt}
-	% \pdfbookmark[0]{\listfigurename}{lof}
-	% \normalsize
-	% \listoffigures*
-	% \cleardoublepage
-% --------------------------------------------------------------------------
-% Lista de tabelas                                                          
-	% \begin{flushleft}
-	% 	\ABNTEXchapterfont\Large\textbf{\MakeUppercase\listadetabelasname}
-	% \end{flushleft}
-	% \vspace*{-36pt}
-	% \pdfbookmark[0]{\listtablename}{lot}
-	% \normalsize
-	% \listoftables*
-	% \cleardoublepage
-% --------------------------------------------------------------------------
-% Lista de símbolos e abreviaturas                                          
-	% \begin{flushleft}
-	% \ABNTEXchapterfont\Large\textbf{\MakeUppercase\listadesimbolsabrevtitlename}
-	% 	\noindent
-	% 	\vspace*{-06pt}
-	% 	\pdfbookmark[0]{\listadesiglasname}{lot}
-	% 	\normalsize
-	% 	\normalfont
-	% 	\aclist[list=acronyms]
-	% \end{flushleft}
-	% \newpage
-	% todo fazer uma revisão geral no uso de abreviaturas, verificar em todo os capítulos
-% --------------------------------------------------------------------------
-% Tabela de conteúdo                                                        	
-	% \begin{flushleft}
-	% 	\ABNTEXchapterfont\Large\textbf{\MakeUppercase\glosariotitlename}
-	% \end{flushleft}
-	% %\pagebreak
-	% \vspace*{-36pt}
-	% \pdfbookmark[0]{\contentsname}{toc}
-	% \normalsize
-	% \normalfont
-	% \tableofcontents*
-	% \justify
 % --------------------------------------------------------------------------
 % Formatação, remover espaço depois dos títulos
 	\setlength\beforechapskip{-24pt}
@@ -361,122 +235,31 @@ brazil
 	\normalfont
 % --------------------------------------------------------------------------
 % Conteúdo do relatório  
-	%\include{sections/01introducao}
-	% \include{sections/02sota}
-	% \include{sections/03conceito}
-	% \include{sections/04especificacao}
-	% \include{sections/05conclusao}
-
+	\include{sections/01introducao}
+	\include{sections/02estudo}
+	\include{sections/03experimento}
+	\include{sections/04resultados}
+	\include{sections/05conclusao}
+	%\include{sections/02referencial}
+	%\include{sections/03metodo}
 % --------------------------------------------------------------------------
-
-%SEÇÃO 1----------------------------------------------
-\section*{Introdução}
-
-Este documento tem como objetivo analisar um experimento estatístico sobre um modelo de helicóptero de papel. 
-Durante o processo, foi medido o seu tempo de queda em duas alturas diferentes, 1,30 m e 2,10 m, 
- além disto, 
-para alterar o seu desempenho, pedaços de fita foram colados em seu corpo e hélices e um clipe foi adicionado em sua parte inferior a fim de verificar a influência da variação destes parâmetros no resultado final. Para variar o valor. 
-O procedimento resultou em trinta e duas combinações distintas conforme vistas na tabela \ref{tab:dados_experimento}.
-
-Para realizar o estudo estatístico dos dados foi utilizada a ferramenta R, uma linguagem de programação voltada à manipulação, 
-análise e visualização de dados.
-
-
-\begin{table}[H]
-	\centering
-	\caption{Dados do experimento.}
-	\begin{tabular}{|c|c|c|c|c|c|}
-	\hline
-	\rowcolor[HTML]{EFEFEF} 
-	\textbf{Clipe} & \textbf{Altura} & \textbf{Ad\_top} & \textbf{Ad\_left} & \textbf{Ad\_right} & \textbf{Score} \\ \hline
-	+              & -               & -                & -                 & -                  & 1,57           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & -               & -                & -                 & -                  & 1,27           \\ \hline
-	+              & +               & -                & -                 & -                  & 1,70           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & +               & -                & -                 & -                  & 1,10           \\ \hline
-	+              & +               & +                & -                 & -                  & 1,75           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & +               & +                & -                 & -                  & 1,30           \\ \hline
-	+              & -               & +                & -                 & -                  & 1,82           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & -               & +                & -                 & -                  & 1,31           \\ \hline
-	+              & +               & +                & -                 & +                  & 1,68           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & +               & +                & -                 & +                  & 1,35           \\ \hline
-	+              & -               & +                & -                 & +                  & 2,04           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & -               & +                & -                 & +                  & 1,42           \\ \hline
-	+              & -               & +                & +                 & +                  & 1,86           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & -               & +                & +                 & +                  & 1,32           \\ \hline
-	+              & +               & +                & +                 & +                  & 1,63           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & +               & +                & +                 & +                  & 1,17           \\ \hline
-	+              & -               & -                & +                 & +                  & 1,58           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & -               & -                & +                 & +                  & 1,44           \\ \hline
-	+              & +               & -                & +                 & +                  & 1,73           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & +               & -                & +                 & +                  & 1,25           \\ \hline
-	+              & +               & -                & -                 & +                  & 1,55           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & +               & -                & -                 & +                  & 1,23           \\ \hline
-	+              & -               & -                & -                 & +                  & 1,91           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & -               & -                & -                 & +                  & 1,50           \\ \hline
-	+              & -               & -                & +                 & -                  & 1,92           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & -               & -                & +                 & -                  & 1,36           \\ \hline
-	+              & +               & -                & +                 & -                  & 1,71           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & +               & -                & +                 & -                  & 1,52           \\ \hline
-	+              & +               & +                & +                 & -                  & 1,74           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & +               & +                & +                 & -                  & 1,32           \\ \hline
-	+              & -               & +                & +                 & -                  & 1,83           \\ \hline
-	\rowcolor[HTML]{EFEFEF} 
-	-              & -               & +                & +                 & -                  & 1,40           \\ \hline
-	\end{tabular}
-	\label{tab:dados_experimento}
-	% \caption*{Autoria própria.}
-	\end{table}
-
-
-% \section*{Interpretação dos resultados obtidos}
-\include{sections/results}
-
-
-\section*{Conclusão}
-
-
-
-
-
-%---------------------------------------------------------------------------------------
 % Referências
 	\cleardoublepage
 	\titleformat{\chapter}[display]{\vspace*{-24pt}\ABNTEXchapterfont\large\bfseries}{\chaptertitlename\ \thechapter}{12pt}{\Large}
 	\bibliography{bibliography}
 % --------------------------------------------------------------------------
-%Apêndices
+% Apêndices
 	% \apendices
 	% \justify
 	% %
-	% \chapter{\textit{Draft} do conceito (Vistas).}
-	% \label{apend:draft}
-	% \includepdf[pages={{},-}]{images/Desenho_tecnico_UGV-C_4vistas.pdf}
-	% % \lipsum[1] % Comentar e adicionar apêndice aqui
+	% \chapter{Questões de abordagem à pesquisa}
+	% \label{apend:quest}
+	% %\includepdf[pages={{},-}]{appendix/listquest.pdf}
+	% \lipsum[1] % Comentar e adicionar apêndice aqui
 	% %
-	% \chapter{\textit{Draft} do conceito (Isométrica).}
-	% \label{apend:draftiso}
-	% \includepdf[pages={{},-}]{images/iso.pdf}
-	% % \lipsum[1] % Comentar e adicionar apêndice aqui
-
-	% \chapter{Desdobramento da Função Qualidade.}
-	% \label{apend:qfd}
-	% \includepdf[scale=1.64]{images/QFD.pdf}
-	
+	% \chapter{Um assunto importante}
+	% \label{apend:assunto}
+	% \lipsum[1] % Comentar e adicionar apêndice aqui
 	
 
 % --------------------------------------------------------------------------
