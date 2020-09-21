@@ -32,5 +32,6 @@ summary(helicoptero.model2)
 
 coef(helicoptero.model2)
 
+
 @
 \end{document}

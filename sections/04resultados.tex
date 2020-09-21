@@ -50,12 +50,12 @@ Pode-se observar que, para o nosso modelo, as variáveis que possuem relevância
 Considerando as variáveis que possuem relevância estatística, a equação linear que representa o modelo é descrita da seguinte forma:
 
 \begin{center}
-  
+\small  
 $
-  tempo = média(tempos) + \dfrac{coef(altura)}{2}altura + \dfrac{coef(ad\_esquerda)}{2}ad\_esquerda + \dfrac{coef(ad\_direita)}{2}ad\_direita +  \dfrac{ad\_esquerda:ad\_direita}{2}ad\_esquerda:ad\_direita
+  tempo = média(tempos) + \dfrac{coef(altura)}{2}altura + \dfrac{coef(ad\_esquerda)}{2}ad\_esquerda + \dfrac{coef(ad\_direita)}{2}ad\_direita +  \dfrac{coef(ad\_esquerda:ad\_direita)}{2}ad\_esquerda:ad\_direita
 $  
 \end{center}
-
+\normalsize
 Desta forma, fazendo as devidas substituições, temos que:
 
 
@@ -81,3 +81,44 @@ De forma análoga, para encontrar o menor valor de tempo de voo devemos atribuir
 
   $tempo\_min =  1.54 + 0.2106*(-1) + 0.0881*(-1) + 0.0931*(-1) - 0.105*(1) = 1.15seg$
 
+Para garantir a veracidade do modelo de regressão linear encontrado deve-se então realizar à análise dos seus resíduos, os quais espera-se possuírem distribuição normal e aleatoriedade em torno da regressão obtida.  A Figura \ref{fig:hist_residuals} exibe o histograma dos resíduos calculados e pode-se observar a distribuição normal dos valores, conforme o esperado.
+
+\begin{figure}[H]
+  \caption{Histograma dos resíduos}
+  \center
+  \includegraphics[scale=0.7]{images/hist_residuals.png}
+  \legend {Fonte: Autoria própria.}
+  \label{fig:hist_residuals}
+\end{figure}
+
+Ao usar a função \textbf{plot()} para o nosso modelo, o primeiro gráfico gerado é o \textit{Residuals vs Fitted}, exibido na Figura \ref{fig:fitted}, que dá uma indicação se há padrões não-lineares nos resíduos. Pode-se verificar na figura que o nosso modelo exibe uma regressão linear atráves de um certo número dos pontos.
+
+\begin{figure}[H]
+\caption{\textit{Residuals vs Fitted}}
+\center 
+\includegraphics[scale=0.42]{images/fitted.png}
+\legend {Fonte: Autoria própria.}
+\label{fig:fitted}
+\end{figure}
+
+Uma outra forma de verificar a distribuição normal dos resíduos é através da Normal Q-Q. Podemos visualizar na Figura \ref{fig:qq} a Normal Q-Q para o nosso modelo, na qual os resíduos seguem próximos à linha reta em diagonal, sendo uma boa indicação de quem encontram-se normalmente distríbuidos.
+
+\begin{figure}[H]
+  \caption{Normal Q-Q}
+  \center
+  \includegraphics[scale=0.42]{images/qq.png}
+  \legend {Fonte: Autoria própria.}
+  \label{fig:qq}
+\end{figure}
+
+É necessário verificar também se os resíduos possuem homocedasticidade, ou seja possuam variância comum ao longo da regressão. Pode-se observar no gráfico exibido na Figura \ref{fig:scale} que os resíduos apresentam-se aleatoriamente pela linha, sem concentrar-se nem ao topo nem abaixo da mesma, comportamento que se assemelha ao esperado.
+
+\begin{figure}[H]
+  \caption{\textit{Scale-Location}}
+  \center 
+  \includegraphics[scale=0.42]{images/scale_location.png}
+  \legend {Fonte: Autoria própria.}
+  \label{fig:scale}
+\end{figure}
+
+A partir da análise realizada dos resíduos é possível então concluir que o modelo de regressão linear encontrado na equação \ref{eq:tempo} é válido para o helicóptero utilizado.
