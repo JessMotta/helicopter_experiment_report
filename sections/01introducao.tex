@@ -1,11 +1,14 @@
 %SEÇÃO 1----------------------------------------------
 \chapter{INTRODUÇÃO}
+    Diferentes métodos constituem a prática da melhoria contínua. É de suma importancia que os administradores conheçam estas ferramentas para que haja sempre redução de desperdícios, aumento da eficiência e controle dos processos.
+
     Planejamento de Experimentos ou DOE (\textit{Design of Experiments}), é a técnica usada para estudar um produto ou processo, e assim, identificar os fatores que mais influenciam seu comportamento. Através deste método deve-se obter a mais otimizada configuração para a construção da peça ou elaboração do procedimento.
 
     O desenvolvimento de um experimento bem executado deve explicitar os fatores-chave do processo, assim como a combinação dos fatores que fazem o processo funcionar de maneira aceitável. A variabilidade do processo, ou seja, a diferença entre o que esperamos de algo e o que realmente acontece também é um ponto a ser observado pelo executor do DOE.
 
-    O DOE pode ser aplicado em duas situações: planejamento de experimentos e correção de processos defeituosos. Um processo desenvolvido desde o início com esta aplicação garante que sua produção e gestão sejam sempre melhoradas e tenham custos e tempo reduzidos. 
+    O resultado que determina uma característica ou elemento do experimento é chamado de variável de resposta. Por ser um método de abordagem repetitiva, é necessário realizar ciclos de testes para alcançar um bom resultado. Estes ciclos devem possuir três etapas: Rastreamento - fase de delimitação de variáveis e do campo de atuação; Projeto fatorial completo - fase de combinação de fatores e níveis de fatores e Projeto de superfície - Modelagem dos resultados obtidos.   
 
+    O DOE pode ser aplicado em duas situações: planejamento de experimentos e correção de processos defeituosos. Um processo desenvolvido desde o início com esta aplicação garante que sua produção e gestão sejam sempre melhoradas e tenham custos e tempo reduzidos. É uma ferramenta de melhoria contínua bastante eficaz, desde que se tome os devidos cuidados com as etapas do experimento.
 
 
     
@@ -13,73 +16,3 @@
     
 
 
-
-% Este documento tem como objetivo analisar um experimento estatístico sobre um modelo de helicóptero de papel. 
-% Durante o processo, foi medido o seu tempo de queda em duas alturas diferentes, 1,30 m e 2,10 m, 
-%  além disto, 
-% para alterar o seu desempenho, pedaços de fita foram colados em seu corpo e hélices e um clipe foi adicionado em sua parte inferior a fim de verificar a influência da variação destes parâmetros no resultado final. Para variar o valor. 
-% O procedimento resultou em trinta e duas combinações distintas conforme vistas na tabela \ref{tab:dados_experimento} .
-
-% Para realizar o estudo estatístico dos dados foi utilizada a ferramenta R, uma linguagem de programação voltada à manipulação, 
-% análise e visualização de dados.
-
-
-    % \begin{table}[H]
-    %     \centering
-    %     \caption{Dados do experimento.}
-    %     \begin{tabular}{|c|c|c|c|c|c|}
-    %     \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     \textbf{Clipe} & \textbf{Altura} & \textbf{Ad\_top} & \textbf{Ad\_left} & \textbf{Ad\_right} & \textbf{Score} \\ \hline
-    %     +              & -               & -                & -                 & -                  & 1,57           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & -               & -                & -                 & -                  & 1,27           \\ \hline
-    %     +              & +               & -                & -                 & -                  & 1,70           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & +               & -                & -                 & -                  & 1,10           \\ \hline
-    %     +              & +               & +                & -                 & -                  & 1,75           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & +               & +                & -                 & -                  & 1,30           \\ \hline
-    %     +              & -               & +                & -                 & -                  & 1,82           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & -               & +                & -                 & -                  & 1,31           \\ \hline
-    %     +              & +               & +                & -                 & +                  & 1,68           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & +               & +                & -                 & +                  & 1,35           \\ \hline
-    %     +              & -               & +                & -                 & +                  & 2,04           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & -               & +                & -                 & +                  & 1,42           \\ \hline
-    %     +              & -               & +                & +                 & +                  & 1,86           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & -               & +                & +                 & +                  & 1,32           \\ \hline
-    %     +              & +               & +                & +                 & +                  & 1,63           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & +               & +                & +                 & +                  & 1,17           \\ \hline
-    %     +              & -               & -                & +                 & +                  & 1,58           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & -               & -                & +                 & +                  & 1,44           \\ \hline
-    %     +              & +               & -                & +                 & +                  & 1,73           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & +               & -                & +                 & +                  & 1,25           \\ \hline
-    %     +              & +               & -                & -                 & +                  & 1,55           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & +               & -                & -                 & +                  & 1,23           \\ \hline
-    %     +              & -               & -                & -                 & +                  & 1,91           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & -               & -                & -                 & +                  & 1,50           \\ \hline
-    %     +              & -               & -                & +                 & -                  & 1,92           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & -               & -                & +                 & -                  & 1,36           \\ \hline
-    %     +              & +               & -                & +                 & -                  & 1,71           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & +               & -                & +                 & -                  & 1,52           \\ \hline
-    %     +              & +               & +                & +                 & -                  & 1,74           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & +               & +                & +                 & -                  & 1,32           \\ \hline
-    %     +              & -               & +                & +                 & -                  & 1,83           \\ \hline
-    %     \rowcolor[HTML]{EFEFEF} 
-    %     -              & -               & +                & +                 & -                  & 1,40           \\ \hline
-    %     \end{tabular}
-    %     \label{tab:dados_experimento}
-    %     % \caption*{Autoria própria.}
-    % \end{table}
