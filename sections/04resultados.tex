@@ -1,68 +1,83 @@
 \chapter{INTERPRETAÇÃO DOS RESULTADOS OBTIDOS}
-O modelo linear encontrado, considerando a interação entre dois elementos, é disposto a seguir.
+O modelo de regressão linear encontrado, considerando a interação entre dois elementos, é disposto a seguir.
 
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{verbatim}
-## Call:
-## lm(formula = score ~ (altura + clipe + ad_top + ad_left + ad_right) + 
-##     altura * clipe + altura * ad_top + altura * ad_left + altura * 
-##     ad_right + clipe * ad_top + clipe * ad_left + clipe * ad_right + 
-##     ad_top * ad_left + ad_top * ad_right + ad_left * ad_right, 
-##     data = helicoptero)
-## 
-## Residuals:
-##       Min        1Q    Median        3Q       Max 
-## -0.180625 -0.055313 -0.009375  0.059687  0.120625 
-## 
-## Coefficients:
-##                    Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         1.60813    0.07069  22.750 1.30e-13 ***
-## altura-             0.18625    0.07903   2.357  0.03151 *  
-## clipe-             -0.42375    0.07903  -5.362 6.36e-05 ***
-## ad_top-             0.00375    0.07903   0.047  0.96274    
-## ad_left-            0.14125    0.07903   1.787  0.09284 .  
-## ad_right-           0.18625    0.07903   2.357  0.03151 *  
-## altura-:clipe-     -0.03250    0.07069  -0.460  0.65186    
-## altura-:ad_top-    -0.03750    0.07069  -0.531  0.60304    
-## altura-:ad_left-    0.06750    0.07069   0.955  0.35382    
-## altura-:ad_right-  -0.14250    0.07069  -2.016  0.06092 .  
-## clipe-:ad_top-      0.09500    0.07069   1.344  0.19771    
-## clipe-:ad_left-    -0.04000    0.07069  -0.566  0.57932    
-## clipe-:ad_right-   -0.02000    0.07069  -0.283  0.78085    
-## ad_top-:ad_left-   -0.13500    0.07069  -1.910  0.07425 .  
-## ad_top-:ad_right-  -0.00500    0.07069  -0.071  0.94448    
-## ad_left-:ad_right- -0.21000    0.07069  -2.971  0.00901 ** 
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Residual standard error: 0.09996 on 16 degrees of freedom
-## Multiple R-squared:  0.9161,	Adjusted R-squared:  0.8375 
-## F-statistic: 11.65 on 15 and 16 DF,  p-value: 6.57e-06
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+  \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+  \begin{verbatim}
+  ## 
+  ## Call:
+  ## lm(formula = tempo ~ (altura + clipe + ad_top + ad_esquerda + 
+  ##     ad_direita) + altura * clipe + altura * ad_top + altura * 
+  ##     ad_esquerda + altura * ad_direita + clipe * ad_top + clipe * 
+  ##     ad_esquerda + clipe * ad_direita + ad_top * ad_esquerda + 
+  ##     ad_top * ad_direita + ad_esquerda * ad_direita,
+  ##     data = helicoptero)
+  ## 
+  ## Residuals:
+  ##       Min        1Q    Median        3Q       Max 
+  ## -0.180625 -0.055312 -0.009375  0.059687  0.120625 
+  ## 
+  ## Coefficients:
+  ##                          Estimate Std. Error t value Pr(>|t|)    
+  ## (Intercept)               1.24188    0.07069  17.569 6.99e-12 ***
+  ## altura+                   0.42125    0.07903   5.330 6.77e-05 ***
+  ## clipe+                   -0.04125    0.07903  -0.522  0.60885    
+  ## ad_top+                   0.07875    0.07903   0.996  0.33386    
+  ## ad_esquerda+              0.17625    0.07903   2.230  0.04040 *  
+  ## ad_direita+               0.19125    0.07903   2.420  0.02779 *  
+  ## altura+:clipe+           -0.03250    0.07069  -0.460  0.65186    
+  ## altura+:ad_top+           0.09500    0.07069   1.344  0.19771    
+  ## altura+:ad_esquerda+     -0.04000    0.07069  -0.566  0.57932    
+  ## altura+:ad_direita+      -0.02000    0.07069  -0.283  0.78085    
+  ## clipe+:ad_top+           -0.03750    0.07069  -0.531  0.60304    
+  ## clipe+:ad_esquerda+       0.06750    0.07069   0.955  0.35382    
+  ## clipe+:ad_direita+       -0.14250    0.07069  -2.016  0.06092 .  
+  ## ad_top+:ad_esquerda+     -0.13500    0.07069  -1.910  0.07425 .  
+  ## ad_top+:ad_direita+      -0.00500    0.07069  -0.071  0.94448    
+  ## ad_esquerda+:ad_direita+ -0.21000    0.07069  -2.971  0.00901 ** 
+  ## ---
+  ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+  ## 
+  ## Residual standard error: 0.09996 on 16 degrees of freedom
+  ## Multiple R-squared:  0.9161,	Adjusted R-squared:  0.8375 
+  ## F-statistic: 11.65 on 15 and 16 DF,  p-value: 6.57e-06
+  \end{verbatim}
+  \end{kframe}
+  \end{knitrout}
 
-Pode-se observar que para este modelo os elementos que possuem importância estatística, ou seja Pr $<$ 0.05 são: altura (Pr = 0.03151), clipe (Pr = 6.36e-05), ad\_right (Pr = 0.03151) e ad\_left:ad\_right (Pr = 0.00901). 
+Pode-se observar que, para o nosso modelo, as variáveis que possuem relevância estatística, ou seja Pr $<$ 0.05 são: altura (Pr = 6.77e-05), ad\_esquerda (Pr = 0.4040), ad\_direita (Pr = 0.02779) e ad\_esquerda:ad\_direita (Pr = 0.00901). 
 
-Considerando os elementos de importância estatística, a equação que representa o modelo é descrita da seguinte forma:
+Considerando as variáveis que possuem relevância estatística, a equação linear que representa o modelo é descrita da seguinte forma:
 
 \begin{center}
+  
 $
-  score = mean(scores) + \dfrac{coef(altura)}{2}altura + \dfrac{coef(clipe)}{2}clipe + \dfrac{coef(ad\_right)}{2}ad\_right +  \dfrac{ad\_left:ad\_right}{2}ad\_left:ad\_right
+  tempo = média(tempos) + \dfrac{coef(altura)}{2}altura + \dfrac{coef(ad\_esquerda)}{2}ad\_esquerda + \dfrac{coef(ad\_direita)}{2}ad\_direita +  \dfrac{ad\_esquerda:ad\_direita}{2}ad\_esquerda:ad\_direita
 $  
 \end{center}
 
 Desta forma, fazendo as devidas substituições, temos que:
 
-\begin{center}
+
   $
-    score = 1.54 + \dfrac{0.18625}{2}altura + \dfrac{-0.42375}{2}clipe + \dfrac{0.18625}{2}ad\_right +  \dfrac{-0.21}{2}ad\_left:ad\_right
-  $  
+     tempo = 1.54 + \dfrac{0.42125}{2}altura + \dfrac{0.17625}{2}ad\_esquerda + \dfrac{0.19125}{2}ad\_direita \\ +  \dfrac{(-0.21)}{2}ad\_esquerda:ad\_direita
+  $, logo: 
 
-  $ score = 1.54 + 0.0931altura- 0.2119clipe + 0.0931ad\_right - 0.105ad\_left:ad\_right$
+\begin{equation}
+\begin{gathered}  
+tempo = 1.54 + 0.210625altura + 0.088125ad\_esquerda + 0.095625ad\_direita - \\
+0.105ad\_esquerda:ad\_direita
+\label{eq:tempo}
+\end{gathered}
+\end{equation}
 
-  $score\_max =  1.54 + 0.0931*(1)- 0.2119*(-1) + 0.0931*(1) - 0.105*(-1) = 2.04$
 
-  $score\_min =  1.54 + 0.0931*(-1)- 0.2119*(1) + 0.0931*(-1) - 0.105*(1) = 1.04$
-  \end{center}
+
+É fácil de verificar na equação \ref{eq:tempo} que as variáveis \textit{altura}, \textit{ad\_direita} e \textit{ad\_esquerda} influenciam positivamente no tempo de queda (possuem coeficientes positivos) enquanto a interação entre as variáveis \textit{ad\_esquerda:ad\_direita} influencia negativamente (possui coeficiente negativo). Desta forma, considerando que nossas variáveis de entrada assumam apenas valores de -1 ou 1, para encontrar o maior valor de tempo de voo devemos atribuir valor positivo às variáveis \textit{altura}, \textit{ad\_direita} e valor negativo à interação \textit{ad\_esquerda:ad\_direita}, o que resulta em:
+
+  $tempo\_max =  1.54 + 0.2106*(1) + 0.0881*(1) + 0.0931*(1) - 0.105*(-1) = 2.04seg$
+
+De forma análoga, para encontrar o menor valor de tempo de voo devemos atribuir valor negativo às variáveis \textit{altura}, \textit{ad\_direita} e \textit{ad\_esquerda} e valor positivo à interação \textit{ad\_esquerda:ad\_direita}, resultando em :
+
+  $tempo\_min =  1.54 + 0.2106*(-1) + 0.0881*(-1) + 0.0931*(-1) - 0.105*(1) = 1.15seg$
+
