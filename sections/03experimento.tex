@@ -39,7 +39,7 @@ Para realizar os testes, foram considerados alguns fatores que influenciam no te
   \rowcolor[HTML]{EFEFEF} 
   Clipe                         & Não                         & Sim                          \\ \hline
   \rowcolor[HTML]{FFFFFF} 
-  Altura (m)                    & 1,30                        & 2,10                         \\ \hline
+  Altura (m)                    & 2,10                        & 1,30                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
   Adesivo (Asa)                 & Não                         & Sim                          \\ \hline
   \rowcolor[HTML]{FFFFFF} 
@@ -51,7 +51,7 @@ Para realizar os testes, foram considerados alguns fatores que influenciam no te
   \label{tab:fatores}
   \end{table}
 
-Por fim, foi construída a Tabela \ref{tab:dados_experimento} que contém o tempo de voo para cada uma das possíveis combinações dos fatores. Para as variáveis \textit{clipe}, \textit{Ad\_top}, \textit{Ad\_esquerda} e \textit{Ad\_direita} o simbolo ``\textbf{+}'' indica a sua presença enquanto o ``\textbf{-}'' representa a sua ausência, já para a variável \textit{Altura} o ``\textbf{+}'' retrata sua configuração inicial de 1,30 metros e o ``\textbf{-}'' representa a altura de 2,10 metros. O próximo passo é utilizar a ferramenta R para realizar o estudo de planejamento de experimentos (DOE) e analisar qual das configurações está exercendo uma maior influência no experimento, que será discutido na seção \ref{chap:resultados}.
+Por fim, foi construída a Tabela \ref{tab:dados_experimento} que contém o tempo de voo para cada uma das possíveis combinações dos fatores. Para as variáveis \textit{clipe}, \textit{Ad\_top}, \textit{Ad\_esquerda} e \textit{Ad\_direita} o simbolo ``\textbf{+}'' indica a sua presença enquanto o ``\textbf{-}'' representa a sua ausência, já para a variável \textit{Altura} o ``\textbf{+}'' retrata sua configuração inicial de 2,10 metros e o ``\textbf{-}'' representa a altura de 1,30 metros. O próximo passo é utilizar a ferramenta R para realizar o estudo de planejamento de experimentos (DOE) e analisar qual das configurações está exercendo uma maior influência no experimento, que será discutido na seção \ref{chap:resultados}.
 
 \begin{table}[H]
   \centering
@@ -59,7 +59,7 @@ Por fim, foi construída a Tabela \ref{tab:dados_experimento} que contém o temp
   \begin{tabular}{|c|c|c|c|c|c|}
   \hline
   \rowcolor[HTML]{EFEFEF} 
-  \textbf{Clipe} & \textbf{Altura} & \textbf{Ad\_top} & \textbf{Ad\_esquerda} & \textbf{Ad\_direita} & \textbf{Tempo} \\ \hline
+  \textbf{Altura} & \textbf{Clipe} & \textbf{Ad\_top} & \textbf{Ad\_esquerda} & \textbf{Ad\_direita} & \textbf{Tempo} \\ \hline
   +              & -               & -                & -                 & -                  & 1,57           \\ \hline
   \rowcolor[HTML]{EFEFEF} 
   -              & -               & -                & -                 & -                  & 1,27           \\ \hline
