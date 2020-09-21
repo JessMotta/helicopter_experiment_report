@@ -1,7 +1,10 @@
 \chapter{EXPERIMENTO}
 \label{chap:experimento}
 
-Para aplicar os conceitos visto na seção \ref{chap:estudo}, foi proposto um desafio em que consiste medir o tempo de voo de um helicóptero de papel. Para a concepção do helicóptero foi utilizado o modelo proposto pela metodologia \textit{SixSigma}, conforme visto na Figura \ref{fig:model_heli}. 
+Para aplicar os conceitos visto na seção \ref{chap:estudo}, foi proposto um desafio em que consiste medir o tempo de ``voo'' de um helicóptero de papel. O objetivo deste desafio é, a partir da saída desejada (variável de resposta), encontrar a melhor solução possível, no nosso caso o helicóptero que permanece no ar por mais tempo.  
+
+
+Para a conceber o protótipo do helicóptero para o estudo, foi utilizado o modelo proposto pela metodologia \textit{SixSigma}, conforme visto na Figura \ref{fig:model_heli}. 
 
 \begin{figure}[H]
   \caption{Modelo do helicóptero de papel.}
@@ -10,7 +13,11 @@ Para aplicar os conceitos visto na seção \ref{chap:estudo}, foi proposto um de
   \label{fig:model_heli}
 \end{figure}
 
-Após as dobras e cortes recomendados pelo \textit{template}, o protótipo obtido como configuração inicial para análise do estudo pode ser visto na Figura \ref{fig:heli_papel}.
+Seguindo as recomendações do \textit{template}, foi obtido como modelo de configuração inicial, o helicóptero visto na Figura \ref{fig:heli_papel}. Este, apresenta as asas e o corpo com o comprimento máximo (9,5 cm), e que não deverá ser alterado. O seu tempo de voo é medido desde o momento em que é lançado da altura definida até o momento em que o mesmo atinge o solo.
+
+% O tempo de voo é medido desde o momento em que o helicóptero é lançado da altura definida até o momento em que atinge o solo.    
+
+% Após as dobras e cortes recomendados pelo \textit{template}, o protótipo obtido como configuração inicial para análise do estudo pode ser visto na Figura \ref{fig:heli_papel}.
 
 \begin{figure}[H]
   \caption{Helicóptero de papel.}
@@ -20,16 +27,16 @@ Após as dobras e cortes recomendados pelo \textit{template}, o protótipo obtid
   \label{fig:heli_papel}
 \end{figure}
 
-Para obter-se o melhor helicóptero, ou seja, aquele que apresente o maior tempo de voo, foi considerado alguns fatores para alterar sua configuração inicial como pode ser visto na tabela \ref{tab:fatores}. Por fim, foi realizado os testes, medição do tempo de voo, para cada possível combinação dos fatores.
+Para realizar os testes, foi considerado alguns fatores que influenciam no tempo de voo, conforme vistos na Tabela \ref{tab:fatores}.
 
-
+% Para obter-se o melhor helicóptero, ou seja, aquele que apresente o maior tempo de voo, foi considerado alguns fatores para alterar sua configuração inicial como pode ser visto na tabela \ref{tab:fatores}. Por fim, foi realizado os testes, medição do tempo de voo, para cada possível combinação dos fatores.
 \begin{table}[H]
   \caption{Fatores considerados para alterar a estrutura.}
   \centering
   \begin{tabular}{|c|c|c|}
   \hline
   \rowcolor[HTML]{EFEFEF} 
-  \textbf{Fatores}      & \textbf{Configuração atual} & \textbf{Alteração permitida} \\ \hline
+  \textbf{Fatores}      & \textbf{Configuração inicial} & \textbf{Alteração permitida} \\ \hline
   Clipe                 & Não                         & Sim                          \\ \hline
   \rowcolor[HTML]{EFEFEF} 
   Altura (m)            & 1,30                        & 2,10                         \\ \hline
@@ -41,3 +48,65 @@ Para obter-se o melhor helicóptero, ou seja, aquele que apresente o maior tempo
   \caption*{Autoria própria.}
   \label{tab:fatores}
   \end{table}
+
+Por fim, foi construída a Tabela \ref{tab:dados_experimento} que contém o tempo de voo para cada uma das possíveis combinações dos fatores. O próximo passo é utilizar a ferramenta R para realizar o estudo de planejamento de experimentos (DOE) e analisar qual das configurações está exercendo uma maior influência no experimento, que será discutido na seção \ref{chap:resultados}.
+
+\begin{table}[H]
+  \centering
+  \caption{Dados do experimento.}
+  \begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  \rowcolor[HTML]{EFEFEF} 
+  \textbf{Clipe} & \textbf{Altura} & \textbf{Ad\_top} & \textbf{Ad\_left} & \textbf{Ad\_right} & \textbf{Score} \\ \hline
+  +              & -               & -                & -                 & -                  & 1,57           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & -               & -                & -                 & -                  & 1,27           \\ \hline
+  +              & +               & -                & -                 & -                  & 1,70           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & +               & -                & -                 & -                  & 1,10           \\ \hline
+  +              & +               & +                & -                 & -                  & 1,75           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & +               & +                & -                 & -                  & 1,30           \\ \hline
+  +              & -               & +                & -                 & -                  & 1,82           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & -               & +                & -                 & -                  & 1,31           \\ \hline
+  +              & +               & +                & -                 & +                  & 1,68           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & +               & +                & -                 & +                  & 1,35           \\ \hline
+  +              & -               & +                & -                 & +                  & 2,04           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & -               & +                & -                 & +                  & 1,42           \\ \hline
+  +              & -               & +                & +                 & +                  & 1,86           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & -               & +                & +                 & +                  & 1,32           \\ \hline
+  +              & +               & +                & +                 & +                  & 1,63           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & +               & +                & +                 & +                  & 1,17           \\ \hline
+  +              & -               & -                & +                 & +                  & 1,58           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & -               & -                & +                 & +                  & 1,44           \\ \hline
+  +              & +               & -                & +                 & +                  & 1,73           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & +               & -                & +                 & +                  & 1,25           \\ \hline
+  +              & +               & -                & -                 & +                  & 1,55           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & +               & -                & -                 & +                  & 1,23           \\ \hline
+  +              & -               & -                & -                 & +                  & 1,91           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & -               & -                & -                 & +                  & 1,50           \\ \hline
+  +              & -               & -                & +                 & -                  & 1,92           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & -               & -                & +                 & -                  & 1,36           \\ \hline
+  +              & +               & -                & +                 & -                  & 1,71           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & +               & -                & +                 & -                  & 1,52           \\ \hline
+  +              & +               & +                & +                 & -                  & 1,74           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & +               & +                & +                 & -                  & 1,32           \\ \hline
+  +              & -               & +                & +                 & -                  & 1,83           \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  -              & -               & +                & +                 & -                  & 1,40           \\ \hline
+  \end{tabular}
+  \label{tab:dados_experimento}
+  \caption*{Autoria própria.}
+\end{table}
