@@ -134,7 +134,7 @@
   \renewcommand{\listadesiglasname}{Lista de abreviaturas e siglas}
   \renewcommand{\listadesimbolosname}{Lista de s\'imbolos}
   \renewcommand{\execsummarytitlename}[1][SUMÁRIO EXECUTIVO]{#1}
-  \renewcommand{\listadesimbolsabrevtitlename}[1][LISTRA DE SÍMBOLOS E ABREVIATURAS]{#1}
+  \renewcommand{\listadesimbolsabrevtitlename}[1][LISTA DE SÍMBOLOS E ABREVIATURAS]{#1}
   \renewcommand{\glosariotitlename}[1][SUMÁRIO]{#1}
 % ------------------------------------------------------------------------
 % Configurações do pacote backref										  

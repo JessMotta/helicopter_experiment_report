@@ -202,7 +202,7 @@ brazil
 %------------------------------------------------------------------              
 % Acrônimos :: Chamar no texto como \ac{DoF}                                
 \begin{acgroupdef}[list=acronyms]
-	% \acdef{DoF}{Degrees of Freedom}
+	\acdef{DOE}{Design of Experiments}
 	% \acdef{PoC}{Proof of Concept, em português Prova de Conceito}
 	% \acdef{UUV}{Unmanned Underwater Vehicle, em português Veículo Subaquático Não-tripulado}
 	% \acdef{AUV}{Autonomous Underwater Vehicle, em português Veículo Subaquático Autônomo}
@@ -234,6 +234,19 @@ brazil
 \end{flushleft}
 \vspace*{1cm}
 \newpage
+
+% --------------------------------------------------------------------------
+% Lista de símbolos e abreviaturas                                          
+\begin{flushleft}
+	\ABNTEXchapterfont\Large\textbf{\MakeUppercase\listadesimbolsabrevtitlename}
+		\noindent
+		\vspace*{-06pt}
+		\pdfbookmark[0]{\listadesiglasname}{lot}
+		\normalsize
+		\normalfont
+		\aclist[list=acronyms]
+	\end{flushleft}
+	\newpage
 
 % Tabela de conteúdo                                                        	
 	\begin{flushleft}
