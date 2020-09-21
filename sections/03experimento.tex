@@ -1,10 +1,9 @@
 \chapter{EXPERIMENTO}
 \label{chap:experimento}
 
-Para aplicar os conceitos visto na seção \ref{chap:estudo}, foi proposto um desafio em que consiste medir o tempo de ``voo'' de um helicóptero de papel. O objetivo deste desafio é, a partir da saída desejada (variável de resposta), encontrar a melhor solução possível, no nosso caso o helicóptero que permanece no ar por mais tempo.  
+Para aplicar os conceitos vistos na seção \ref{chap:estudo}, foi proposto um desafio em que consiste em modelar um experimento contendo um helicóptero de papel. O objetivo deste desafio é observar como a saída desejada, neste caso o maior tempo de voo, está relacionada com as variáveis de entrada.  
 
-
-Para a conceber o protótipo do helicóptero para o estudo, foi utilizado o modelo proposto pela metodologia \textit{SixSigma}, conforme visto na Figura \ref{fig:model_heli}. 
+Para conceber o protótipo do helicóptero para o estudo, foi utilizado o modelo proposto pela metodologia \textit{SixSigma}, conforme visto na Figura \ref{fig:model_heli}. 
 
 \begin{figure}[H]
   \caption{Modelo do helicóptero de papel.}
@@ -27,23 +26,26 @@ Seguindo as recomendações do \textit{template}, foi obtido como modelo de conf
   \label{fig:heli_papel}
 \end{figure}
 
-Para realizar os testes, foi considerado alguns fatores que influenciam no tempo de voo, conforme vistos na Tabela \ref{tab:fatores}.
+Para realizar os testes, foram considerados alguns fatores que influenciam no tempo de voo, conforme vistos na Tabela \ref{tab:fatores}.
 
-% Para obter-se o melhor helicóptero, ou seja, aquele que apresente o maior tempo de voo, foi considerado alguns fatores para alterar sua configuração inicial como pode ser visto na tabela \ref{tab:fatores}. Por fim, foi realizado os testes, medição do tempo de voo, para cada possível combinação dos fatores.
 \begin{table}[H]
   \caption{Fatores considerados para alterar a estrutura.}
   \centering
   \begin{tabular}{|c|c|c|}
   \hline
   \rowcolor[HTML]{EFEFEF} 
-  \textbf{Fatores}      & \textbf{Configuração inicial} & \textbf{Alteração permitida} \\ \hline
-  Clipe                 & Não                         & Sim                          \\ \hline
+  \textbf{Fatores}              & \textbf{Configuração atual} & \textbf{Alteração permitida} \\ \hline
+  Comprimento (asa e corpo) (m) & 0,095                       & Não                          \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  Altura (m)            & 1,30                        & 2,10                         \\ \hline
-  Adesivo (Asa)         & Não                         & Sim                          \\ \hline
+  Clipe                         & Não                         & Sim                          \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  Altura (m)                    & 1,30                        & 2,10                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  Fita (Corpo/Esquerdo) & Não                         & Sim                          \\ \hline
-  Fita (Corpo/Direito)  & Não                         & Sim                          \\ \hline
+  Adesivo (Asa)                 & Não                         & Sim                          \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  Adesivo (Corpo/Esquerdo)         & Não                         & Sim                          \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  Adesivo (Corpo/Direito)          & Não                         & Sim                          \\ \hline
   \end{tabular}
   \caption*{Fonte: Autoria própria.}
   \label{tab:fatores}
@@ -57,7 +59,7 @@ Por fim, foi construída a Tabela \ref{tab:dados_experimento} que contém o temp
   \begin{tabular}{|c|c|c|c|c|c|}
   \hline
   \rowcolor[HTML]{EFEFEF} 
-  \textbf{Clipe} & \textbf{Altura} & \textbf{Ad\_top} & \textbf{Ad\_left} & \textbf{Ad\_right} & \textbf{Score} \\ \hline
+  \textbf{Clipe} & \textbf{Altura} & \textbf{Ad\_top} & \textbf{Ad\_esquerda} & \textbf{Ad\_direita} & \textbf{Tempo} \\ \hline
   +              & -               & -                & -                 & -                  & 1,57           \\ \hline
   \rowcolor[HTML]{EFEFEF} 
   -              & -               & -                & -                 & -                  & 1,27           \\ \hline
