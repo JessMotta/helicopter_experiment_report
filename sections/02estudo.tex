@@ -2,10 +2,44 @@
 \label{chap:estudo}
 
 Antes de realizar o experimento foi necessário um estudo prévio sobre o \ac{DOE}, neste planejamento determina-se quais as configurações são eficientes para determinado processo.
-Primeiro passo, fazer uma lista inicial de todas as variáveis que serão incluídas no experimento e fazer as combinações dessas. Depois, coletar as informações sobre o processo de todos os membros do time. 
-%analisar essa parte 
+Segundo \cite{coleman1993systematic}  as etapas para o desenvolvimento de um Planejamento de Experimento na Indústria devem ser as seguintes:
+\begin{itemize}
+    \item Caracterização do problema.;
+    \item Escolha dos fatores de influência e níveis, e listar restrições;
+    \item Seleção das variáveis de resposta;
+    \item Determinação de um modelo de planejamento de experimento;
+    \item Condução do experimento;
+    \item Análise dos dados;
+    \item Conclusões e recomendações.
+\end{itemize}
+Nesta seção será avaliado cada item mencionado.
 
-Os fatores/variáveis são separados em controláveis e incontroláveis (ruídos)
+\subsection{Caracterização do problema}
+Nesta etapa é necessário desenvolver as ideias acerca do problema e sobre os objetivos específicos do experimento. É  fundamental a participação de toda a equipe como qualidade, engenharia, clientes e operadores, fazer um relato preciso sobre o problema para que dessa forma possa ser possível a compreensão do processo e uma possível solução do problema.
 
-\section{Experimento de otimização}
-Tem como foco verificar quais são os fatores importantes que conduzem a uma \textbf{resposta ótima}. 
+\subsection{Escolha dos fatores de influência e níveis, e listar restrições}
+Os fatores de influência e os níveis são escolhidos após se obter uma boa definição do problema e a elaboração do objetivo do experimento. O responsável pelo experimento deverá determinar quais fatores devem variar, os intervalos nos quais esses fatores variarão e os níveis em que cada rodada será realizada. Quando se tem por objetivo fazer uma varredura dos fatores ou caracterização do processo, melhor manter baixo o número de níveis, geralmente dois níveis. É fundamental a investigação de todos os fatores que possam ser importantes.
+
+É necessário listar e rotular as interações conhecidas e supostas, e as restrições no experimento, como métodos de aquisição de dados, duração, materiais, facilidade de alterar a variável de controle, tipo de experimento, etc.
+
+
+\subsection{Seleção das variáveis de resposta}
+Nesta etapa o responsável pelo experimento irá escolher a variável que fornece informação útil sobre o processo. Geralmente, tem-se como variável de resposta a média ou o désvio padrão, ou ambos, da característica medida.
+A capacidade do medidor também interferirá nessa etapa pois caso seja baixa, apenas efeitos grandes serão detectados, ou será necessária replicação do experimento. O embasamento para selecionar a variável reposta vem da teoria, especialistas, experiência e até experimentos anteriores.
+
+\subsection{Determinação de um modelo de planejamento de experimento}
+A escolha do planejamento leva em consideração o tamanho da amostra, seleção de uma ordem adequada de rodadas para as tentativas experimentais, ou se a formação de blocos ou outras restrições de aleatorização estão envolvidas. Exemplos de tipos de planejamento são: Fatorial, Completamente aleatorizado com um único fator, Fatorial 2k em blocos, Fatorial 2k fracionário, Blocos aleatorizados, Blocos incompletos balanceados, blocos incompletos parcialmente balanceados, Quadrados latinos, Quadrados de Youden, Hierárquico e Superfície de resposta.
+
+
+\subsection{Condução do experimento}
+Nesta etapa é de extrema importância o monitoramento do processo de forma a garantir que seja feito de acordo com o que foi planejado. Os erros no procedimento experimental que ocorrem durante a condução do experimento destruirão a validade do mesmo. 
+
+\subsection{Análise dos dados}
+Para analisar os dados deve-se empregar os métodos estatísticos, para se obter resultados e conclusões, não opiniões. Se o experimento foi planejado e executado corretamente, logo, o tipo de método estatístico não será complicado. 
+
+Geralmente utiliza-se as técnicas de apresentação e análise como ANOVA, regressão, plots e t test.
+
+
+\subsection{Conclusões e recomendações}
+Após os dados serem analisados, o experimento deverá apresentar conclusões práticas sobre os resultados e recomendar uma ação. Nessa etapa são usados métodos gráficos para passar os resultados para outras pessoas. Também devem ser realizados sequências de acompanhamento e testes de confirmação para validar as conclusões do experimento. 
+
