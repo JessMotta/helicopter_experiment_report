@@ -53,62 +53,81 @@ Para realizar os testes, foram considerados alguns fatores que influenciam no te
 
 Por fim, foi construída a Tabela \ref{tab:dados_experimento} que contém o tempo de voo para cada uma das possíveis combinações dos fatores. Para as variáveis \textit{clipe}, \textit{Ad\_top}, \textit{Ad\_esquerda} e \textit{Ad\_direita} o simbolo ``\textbf{+}'' indica a sua presença enquanto o ``\textbf{-}'' representa a sua ausência, já para a variável \textit{Altura} o ``\textbf{+}'' retrata sua configuração inicial de 1,30 metros e o ``\textbf{-}'' representa a altura de 2,10 metros. O próximo passo é utilizar a ferramenta R para realizar o estudo de planejamento de experimentos (DOE) e analisar qual das configurações está exercendo uma maior influência no experimento, que será discutido na seção \ref{chap:resultados}.
 
+
+
 \begin{table}[H]
   \centering
   \caption{Dados do experimento.}
   \begin{tabular}{|c|c|c|c|c|c|}
   \hline
   \rowcolor[HTML]{EFEFEF} 
-  \textbf{Clipe} & \textbf{Altura} & \textbf{Ad\_top} & \textbf{Ad\_esquerda} & \textbf{Ad\_direita} & \textbf{Tempo} \\ \hline
-  +              & -               & -                & -                 & -                  & 1,57           \\ \hline
+  \textbf{Altura}           & \textbf{Clipe}            & \textbf{Ad\_top}          & \textbf{Ad\_esquerda}     & \textbf{Ad\_direita} & \textbf{Tempo}               \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & -                         & -                         & -                         & -                    & 1,27                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & -               & -                & -                 & -                  & 1,27           \\ \hline
-  +              & +               & -                & -                 & -                  & 1,70           \\ \hline
+  +                         & -                         & -                         & -                         & -                    & 1,27                         \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & +                         & -                         & -                         & -                    & 1,10                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & +               & -                & -                 & -                  & 1,10           \\ \hline
-  +              & +               & +                & -                 & -                  & 1,75           \\ \hline
+  +                         & +                         & -                         & -                         & -                    & 1,70                         \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & -                         & +                         & -                         & -                    & 1,31                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & +               & +                & -                 & -                  & 1,30           \\ \hline
-  +              & -               & +                & -                 & -                  & 1,82           \\ \hline
+  +                         & -                         & +                         & -                         & -                    & 1,82                         \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & +                         & +                         & -                         & -                    & 1,30                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & -               & +                & -                 & -                  & 1,31           \\ \hline
-  +              & +               & +                & -                 & +                  & 1,68           \\ \hline
+  +                         & +                         & +                         & -                         & -                    & 1,75                         \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & -                         & -                         & +                         & -                    & 1,36                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & +               & +                & -                 & +                  & 1,35           \\ \hline
-  +              & -               & +                & -                 & +                  & 2,04           \\ \hline
+  +                         & -                         & -                         & +                         & -                    & 1,92                         \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & +                         & -                         & +                         & -                    & 1,52                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & -               & +                & -                 & +                  & 1,42           \\ \hline
-  +              & -               & +                & +                 & +                  & 1,86           \\ \hline
+  +                         & +                         & -                         & +                         & -                    & 1,71                         \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & -                         & +                         & +                         & -                    & 1,40                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & -               & +                & +                 & +                  & 1,32           \\ \hline
-  +              & +               & +                & +                 & +                  & 1,63           \\ \hline
+  +                         & -                         & +                         & +                         & -                    & 1,83                         \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & +                         & +                         & +                         & -                    & 1,32                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & +               & +                & +                 & +                  & 1,17           \\ \hline
-  +              & -               & -                & +                 & +                  & 1,58           \\ \hline
+  +                         & +                         & +                         & +                         & -                    & 1,74                         \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & -                         & -                         & -                         & +                    & 1,50                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & -               & -                & +                 & +                  & 1,44           \\ \hline
-  +              & +               & -                & +                 & +                  & 1,73           \\ \hline
+  +                         & -                         & -                         & -                         & +                    & 1,91                         \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & +                         & -                         & -                         & +                    & 1,23                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & +               & -                & +                 & +                  & 1,25           \\ \hline
-  +              & +               & -                & -                 & +                  & 1,55           \\ \hline
+  +                         & +                         & -                         & -                         & +                    & 1,55                         \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & -                         & +                         & -                         & +                    & 1,42                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & +               & -                & -                 & +                  & 1,23           \\ \hline
-  +              & -               & -                & -                 & +                  & 1,91           \\ \hline
+  \cellcolor[HTML]{EFEFEF}+ & -                         & \cellcolor[HTML]{EFEFEF}+ & -                         & +                    & 2,04                         \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & +                         & +                         & -                         & +                    & 1,35                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & -               & -                & -                 & +                  & 1,50           \\ \hline
-  +              & -               & -                & +                 & -                  & 1,92           \\ \hline
+  +                         & +                         & +                         & \cellcolor[HTML]{EFEFEF}- & +                    & \cellcolor[HTML]{EFEFEF}1,68 \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & -                         & -                         & +                         & +                    & 1,44                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & -               & -                & +                 & -                  & 1,36           \\ \hline
-  +              & +               & -                & +                 & -                  & 1,71           \\ \hline
+  +                         & \cellcolor[HTML]{EFEFEF}- & \cellcolor[HTML]{EFEFEF}- & +                         & +                    & \cellcolor[HTML]{EFEFEF}1,58 \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & +                         & -                         & +                         & +                    & 1,25                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & +               & -                & +                 & -                  & 1,52           \\ \hline
-  +              & +               & +                & +                 & -                  & 1,74           \\ \hline
+  +                         & +                         & \cellcolor[HTML]{EFEFEF}- & +                         & +                    & \cellcolor[HTML]{EFEFEF}1,73 \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & -                         & +                         & +                         & +                    & 1,32                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & +               & +                & +                 & -                  & 1,32           \\ \hline
-  +              & -               & +                & +                 & -                  & 1,83           \\ \hline
+  +                         & \cellcolor[HTML]{EFEFEF}- & +                         & +                         & +                    & \cellcolor[HTML]{EFEFEF}1,86 \\ \hline
+  \rowcolor[HTML]{FFFFFF} 
+  -                         & +                         & +                         & +                         & +                    & 1,17                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  -              & -               & +                & +                 & -                  & 1,40           \\ \hline
+  +                         & +                         & +                         & +                         & +                    & 1,63                         \\ \hline
   \end{tabular}
   \label{tab:dados_experimento}
   \caption*{Fonte: Autoria própria.}
-\end{table}
+  \end{table}
+
