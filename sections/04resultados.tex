@@ -86,7 +86,52 @@ De forma análoga, para encontrar o menor valor de tempo de voo devemos atribuir
 
   $tempo\_min =  1.54 + 0.2106*(-1) + 0.0881*(-1) + 0.0931*(-1) - 0.105*(1) = 1.15seg$
 
-Para garantir a veracidade do modelo de regressão linear encontrado deve-se então realizar à análise dos seus resíduos, os quais espera-se possuírem distribuição normal e aleatoriedade em torno da regressão obtida.  A Figura \ref{fig:hist_residuals} exibe o histograma dos resíduos calculados e pode-se observar a distribuição normal dos valores, conforme o esperado.
+Os valores esperados para cada teste de lançamento do helicóptero(\textit{Tempo}), bem como os previstos pelo modelo de regressão linear(\textit{Tempo\_p}) e seus respectivos resíduos podem ser visualizados na Tabela \ref{tab:residuos}.
+
+\begin{table}[H]
+  \small
+  \center
+  \caption{Valores Previstos e Resíduos}
+  \begin{tabular}{|c|c|c|}
+  \hline
+  \textbf{Tempo} & \textbf{Tempo\_p} & \textbf{Resíduo} \\ \hline
+  1,27           & 1,241875          & 0,028125         \\ \hline
+  1,57           & 1,663125          & -0,093125        \\ \hline
+  1,1            & 1,200625          & -0,100625        \\ \hline
+  1,7            & 1,589375          & 0,110625         \\ \hline
+  1,31           & 1,320625          & -0,010625        \\ \hline
+  1,82           & 1,836875          & -0,016875        \\ \hline
+  1,3            & 1,241875          & 0,058125         \\ \hline
+  1,75           & 1,725625          & 0,024375         \\ \hline
+  1,36           & 1,418125          & -0,058125        \\ \hline
+  1,92           & 1,799375          & 0,120625         \\ \hline
+  1,52           & 1,444375          & 0,075625         \\ \hline
+  1,71           & 1,793125          & -0,083125        \\ \hline
+  1,4            & 1,361875          & 0,038125         \\ \hline
+  1,83           & 1,838125          & -0,008125        \\ \hline
+  1,32           & 1,350625          & -0,030625        \\ \hline
+  1,74           & 1,794375          & -0,054375        \\ \hline
+  1,5            & 1,433125          & 0,066875         \\ \hline
+  1,91           & 1,834375          & 0,075625         \\ \hline
+  1,23           & 1,249375          & -0,019375        \\ \hline
+  1,55           & 1,618125          & -0,068125        \\ \hline
+  1,42           & 1,506875          & -0,086875        \\ \hline
+  2,04           & 2,003125          & 0,036875         \\ \hline
+  1,35           & 1,285625          & 0,064375         \\ \hline
+  1,68           & 1,749375          & -0,069375        \\ \hline
+  1,44           & 1,399375          & 0,040625         \\ \hline
+  1,58           & 1,760625          & -0,180625        \\ \hline
+  1,25           & 1,283125          & -0,033125        \\ \hline
+  1,73           & 1,611875          & 0,118125         \\ \hline
+  1,32           & 1,338125          & -0,018125        \\ \hline
+  1,86           & 1,794375          & 0,065625         \\ \hline
+  1,17           & 1,184375          & -0,014375        \\ \hline
+  1,63           & 1,608125          & 0,021875         \\ \hline
+  \end{tabular}
+  \label{tab:residuos}
+  \end{table}
+
+De posse desses valores, para garantir a veracidade do modelo de regressão linear encontrado deve-se então realizar à análise dos seus resíduos, os quais espera-se possuírem distribuição normal e aleatoriedade em torno da regressão obtida.  A Figura \ref{fig:hist_residuals} exibe o histograma dos resíduos calculados e pode-se observar a distribuição normal dos valores, conforme o esperado.
 
 \begin{figure}[H]
   \caption{Histograma dos resíduos}
@@ -101,17 +146,17 @@ Ao usar a função \textbf{plot()} para o nosso modelo, o primeiro gráfico gera
 \begin{figure}[H]
 \caption{\textit{Residuals vs Fitted}}
 \center 
-\includegraphics[scale=0.42]{images/fitted.png}
+\includegraphics[scale=0.48]{images/fitted.png}
 \legend {Fonte: Autoria própria.}
 \label{fig:fitted}
 \end{figure}
 
-Uma outra forma de verificar a distribuição normal dos resíduos é através da Normal Q-Q. Podemos visualizar na Figura \ref{fig:qq} a Normal Q-Q para o nosso modelo, na qual os resíduos seguem próximos à linha reta em diagonal, sendo uma boa indicação de quem encontram-se normalmente distríbuidos.
+Uma outra forma de verificar a distribuição normal dos resíduos é através da Normal Q-Q. Podemos visualizar na Figura \ref{fig:qq} a Normal Q-Q para o nosso modelo, na qual os resíduos seguem próximos à linha reta em diagonal, sendo uma boa indicação de que encontram-se normalmente distríbuidos.
 
 \begin{figure}[H]
   \caption{Normal Q-Q}
   \center
-  \includegraphics[scale=0.42]{images/qq.png}
+  \includegraphics[scale=0.48]{images/qq.png}
   \legend {Fonte: Autoria própria.}
   \label{fig:qq}
 \end{figure}
@@ -121,9 +166,9 @@ Uma outra forma de verificar a distribuição normal dos resíduos é através d
 \begin{figure}[H]
   \caption{\textit{Scale-Location}}
   \center 
-  \includegraphics[scale=0.42]{images/scale_location.png}
+  \includegraphics[scale=0.48]{images/scale_location.png}
   \legend {Fonte: Autoria própria.}
   \label{fig:scale}
 \end{figure}
 
-A partir da análise realizada dos resíduos é possível então concluir que o modelo de regressão linear encontrado na equação \ref{eq:tempo} é válido para o helicóptero utilizado.
+A partir da análise realizada dos resíduos é possível então inferir que o modelo de regressão linear encontrado na equação \ref{eq:tempo} é válido para o helicóptero de papel utilizado, com as varíaveis \textit{altura}, \textit{ad\_direita} e \textit{ad\_esquerda} possuindo relevância para a resposta observada na variável de saída (\textit{tempo}).
