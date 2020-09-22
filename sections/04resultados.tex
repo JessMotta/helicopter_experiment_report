@@ -1,10 +1,6 @@
 \chapter{INTERPRETAÇÃO DOS RESULTADOS OBTIDOS}
-<<<<<<< HEAD
 \label{chap:resultados}
-O modelo linear encontrado, considerando a interação entre dois elementos, é disposto a seguir.
-=======
 O modelo de regressão linear encontrado, considerando a interação entre dois elementos, é disposto a seguir.
->>>>>>> feature/results
 
 \begin{knitrout}
   \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -50,23 +46,23 @@ O modelo de regressão linear encontrado, considerando a interação entre dois 
   \end{kframe}
   \end{knitrout}
 
-Pode-se observar que, para o nosso modelo, as variáveis que possuem relevância estatística, ou seja Pr $<$ 0.05 são: altura (Pr = 6.77e-05), ad\_esquerda (Pr = 0.4040), ad\_direita (Pr = 0.02779) e ad\_esquerda:ad\_direita (Pr = 0.00901). 
+Pode-se observar que, para o nosso modelo, as variáveis que possuem relevância estatística, ou seja Pr $<$ 0.05 são: altura (Pr = 6.77e-05), ad\_esquerda (Pr = 0.04040), ad\_direita (Pr = 0.02779) e ad\_esquerda:ad\_direita (Pr = 0.00901). 
 
 Considerando as variáveis que possuem relevância estatística, a equação linear que representa o modelo é descrita da seguinte forma:
 
-\begin{center}
-\small  
-$
-  tempo = média(tempos) + \dfrac{coef(altura)}{2}altura + \dfrac{coef(ad\_esquerda)}{2}ad\_esquerda + \dfrac{coef(ad\_direita)}{2}ad\_direita +  \dfrac{coef(ad\_esquerda:ad\_direita)}{2}ad\_esquerda:ad\_direita
-$  
-\end{center}
-\normalsize
+\begin{equation*}
+  \begin{gathered}
+    tempo = média(tempos) + \dfrac{coef(altura)}{2}altura + \dfrac{coef(ad\_esquerda)}{2}ad\_esquerda + \\ \dfrac{coef(ad\_direita)}{2}ad\_direita +  \dfrac{coef(ad\_esquerda:ad\_direita)}{2}ad\_esquerda:ad\_direita
+  \end{gathered}
+\end{equation*}
+
 Desta forma, fazendo as devidas substituições, temos que:
 
-
-  $
-     tempo = 1.54 + \dfrac{0.42125}{2}altura + \dfrac{0.17625}{2}ad\_esquerda + \dfrac{0.19125}{2}ad\_direita \\ +  \dfrac{(-0.21)}{2}ad\_esquerda:ad\_direita
-  $, logo: 
+\begin{equation*}
+  \begin{gathered}
+    tempo = 1.54 + \dfrac{0.42125}{2}altura + \dfrac{0.17625}{2}ad\_esquerda +  \dfrac{0.19125}{2}ad\_direita  + \\  \dfrac{(-0.21)}{2}ad\_esquerda:ad\_direita
+  \end{gathered}
+\end{equation*}, logo:
 
 \begin{equation}
 \begin{gathered}  
@@ -78,7 +74,7 @@ tempo = 1.54 + 0.210625altura + 0.088125ad\_esquerda + 0.095625ad\_direita - \\
 
 
 
-É fácil de verificar na equação \ref{eq:tempo} que as variáveis \textit{altura}, \textit{ad\_direita} e \textit{ad\_esquerda} influenciam positivamente no tempo de queda (possuem coeficientes positivos) enquanto a interação entre as variáveis \textit{ad\_esquerda:ad\_direita} influencia negativamente (possui coeficiente negativo). Desta forma, considerando que nossas variáveis de entrada assumam apenas valores de -1 ou 1, para encontrar o maior valor de tempo de voo devemos atribuir valor positivo às variáveis \textit{altura}, \textit{ad\_direita} e valor negativo à interação \textit{ad\_esquerda:ad\_direita}, o que resulta em:
+É fácil de verificar na equação \ref{eq:tempo} que as variáveis \textit{altura}, \textit{ad\_direita} e \textit{ad\_esquerda} influenciam positivamente no tempo de voo (possuem coeficientes positivos) enquanto a interação entre as variáveis \textit{ad\_esquerda:ad\_direita} influencia negativamente (possui coeficiente negativo). Desta forma, considerando que nossas variáveis de entrada assumam apenas valores de -1 ou 1, para encontrar o maior valor de tempo de voo devemos atribuir valor positivo às variáveis \textit{altura}, \textit{ad\_direita} e \textit{ad\_esquerda} e valor negativo à interação \textit{ad\_esquerda:ad\_direita}, o que resulta em:
 
   $tempo\_max =  1.54 + 0.2106*(1) + 0.0881*(1) + 0.0931*(1) - 0.105*(-1) = 2.04seg$
 
@@ -129,9 +125,10 @@ Os valores esperados para cada teste de lançamento do helicóptero(\textit{Temp
   1,63           & 1,608125          & 0,021875         \\ \hline
   \end{tabular}
   \label{tab:residuos}
+  \caption*{Fonte: Autoria própria.}
   \end{table}
 
-De posse desses valores, para garantir a veracidade do modelo de regressão linear encontrado deve-se então realizar à análise dos seus resíduos, os quais espera-se possuírem distribuição normal e aleatoriedade em torno da regressão obtida.  A Figura \ref{fig:hist_residuals} exibe o histograma dos resíduos calculados e pode-se observar a distribuição normal dos valores, conforme o esperado.
+De posse desses valores, para garantir a veracidade do modelo de regressão linear encontrado deve-se então realizar a análise dos seus resíduos, os quais espera-se possuírem distribuição normal e aleatoriedade em torno da regressão obtida.  A Figura \ref{fig:hist_residuals} exibe o histograma dos resíduos calculados e pode-se observar a distribuição normal dos valores, conforme o esperado.
 
 \begin{figure}[H]
   \caption{Histograma dos resíduos}
@@ -141,7 +138,7 @@ De posse desses valores, para garantir a veracidade do modelo de regressão line
   \label{fig:hist_residuals}
 \end{figure}
 
-Ao usar a função \textbf{plot()} para o nosso modelo, o primeiro gráfico gerado é o \textit{Residuals vs Fitted}, exibido na Figura \ref{fig:fitted}, que dá uma indicação se há padrões não-lineares nos resíduos. Pode-se verificar na figura que o nosso modelo exibe uma regressão linear atráves de um certo número dos pontos.
+Ao usar a função \textbf{plot()} para o nosso modelo, o primeiro gráfico gerado é o \textit{Residuals vs Fitted}, exibido na Figura \ref{fig:fitted}, que dá uma indicação se há padrões não-lineares nos resíduos. Pode-se verificar na figura que o nosso modelo exibe uma regressão linear através de um certo número dos pontos, o que o valida sobre este aspecto. 
 
 \begin{figure}[H]
 \caption{\textit{Residuals vs Fitted}}
@@ -171,4 +168,3 @@ Uma outra forma de verificar a distribuição normal dos resíduos é através d
   \label{fig:scale}
 \end{figure}
 
-A partir da análise realizada dos resíduos é possível então inferir que o modelo de regressão linear encontrado na equação \ref{eq:tempo} é válido para o helicóptero de papel utilizado, com as varíaveis \textit{altura}, \textit{ad\_direita} e \textit{ad\_esquerda} possuindo relevância para a resposta observada na variável de saída (\textit{tempo}).

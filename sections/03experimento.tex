@@ -1,7 +1,7 @@
 \chapter{EXPERIMENTO}
 \label{chap:experimento}
 
-Para aplicar os conceitos vistos na seção \ref{chap:estudo}, foi proposto um desafio em que consiste em modelar um experimento contendo um helicóptero de papel. O objetivo deste desafio é observar como a saída desejada, neste caso o maior tempo de voo, está relacionada com as variáveis de entrada.  
+Para aplicar os conceitos vistos na seção \ref{chap:estudo}, foi proposto um desafio que consiste em modelar um experimento contendo um helicóptero de papel. O objetivo deste desafio é observar como a saída desejada, neste caso o tempo de voo, está relacionada às variáveis de entrada: altura, clipe e adesivos.  
 
 Para conceber o protótipo do helicóptero para o estudo, foi utilizado o modelo proposto pela metodologia \textit{SixSigma}, conforme visto na Figura \ref{fig:model_heli}. 
 
@@ -13,11 +13,8 @@ Para conceber o protótipo do helicóptero para o estudo, foi utilizado o modelo
   \label{fig:model_heli}
 \end{figure}
 
-Seguindo as recomendações do \textit{template}, foi obtido como modelo de configuração inicial, o helicóptero visto na Figura \ref{fig:heli_papel}. Este, apresenta as asas e o corpo com o comprimento máximo (9,5 cm), e que não deverá ser alterado. O seu tempo de voo é medido desde o momento em que é lançado da altura definida até o momento em que o mesmo atinge o solo.
+Seguindo as recomendações do \textit{template}, foi obtido como modelo de configuração inicial o helicóptero visto na Figura \ref{fig:heli_papel}. Este apresenta as asas e o corpo com o comprimento máximo de 0,095 m que não deverá ser alterado. O seu tempo de voo é medido desde o momento em que é lançado da altura definida até o momento em que atinge o solo.
 
-% O tempo de voo é medido desde o momento em que o helicóptero é lançado da altura definida até o momento em que atinge o solo.    
-
-% Após as dobras e cortes recomendados pelo \textit{template}, o protótipo obtido como configuração inicial para análise do estudo pode ser visto na Figura \ref{fig:heli_papel}.
 
 \begin{figure}[H]
   \caption{Helicóptero de papel.}
@@ -27,7 +24,7 @@ Seguindo as recomendações do \textit{template}, foi obtido como modelo de conf
   \label{fig:heli_papel}
 \end{figure}
 
-Para realizar os testes, foram considerados alguns fatores que influenciam no tempo de voo, conforme vistos na Tabela \ref{tab:fatores}.
+Para realizar os testes foram considerados alguns fatores que influenciam no tempo de voo, conforme vistos na Tabela \ref{tab:fatores}.
 
 \begin{table}[H]
   \caption{Fatores considerados para alterar a estrutura.}
@@ -40,7 +37,7 @@ Para realizar os testes, foram considerados alguns fatores que influenciam no te
   \rowcolor[HTML]{EFEFEF} 
   Clipe                         & Não                         & Sim                          \\ \hline
   \rowcolor[HTML]{FFFFFF} 
-  Altura (m)                    & 1,30                        & 2,10                         \\ \hline
+  Altura (m)                    & 2,10                        & 1,30                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
   Adesivo (Asa)                 & Não                         & Sim                          \\ \hline
   \rowcolor[HTML]{FFFFFF} 
@@ -52,7 +49,7 @@ Para realizar os testes, foram considerados alguns fatores que influenciam no te
   \label{tab:fatores}
   \end{table}
 
-Por fim, foi construída a Tabela \ref{tab:dados_experimento} que contém o tempo de voo para cada uma das possíveis combinações dos fatores. Para as variáveis \textit{clipe}, \textit{Ad\_top}, \textit{Ad\_esquerda} e \textit{Ad\_direita} o simbolo ``\textbf{+}'' indica a sua presença enquanto o ``\textbf{-}'' representa a sua ausência, já para a variável \textit{Altura} o ``\textbf{+}'' retrata sua configuração inicial de 1,30 metros e o ``\textbf{-}'' representa a altura de 2,10 metros. O próximo passo é utilizar a ferramenta R para realizar o estudo de planejamento de experimentos (DOE) e analisar qual das configurações está exercendo uma maior influência no experimento, que será discutido na seção \ref{chap:resultados}.
+Por fim, foi construída a Tabela \ref{tab:dados_experimento} que contém o tempo de voo para cada uma das possíveis combinações dos fatores. Para as variáveis \textit{clipe}, \textit{Ad\_top}, \textit{Ad\_esquerda} e \textit{Ad\_direita} o simbolo ``\textbf{+}'' indica a sua presença enquanto o ``\textbf{-}'' representa a sua ausência, já para a variável \textit{Altura} o ``\textbf{+}'' retrata sua configuração inicial de 2,10 metros e o ``\textbf{-}'' representa a altura de 1,30 metros. O próximo passo é utilizar a ferramenta R para realizar o estudo de planejamento de experimentos (\ac{DOE}) e analisar qual das configurações está exercendo uma maior influência no experimento, que será discutido na seção \ref{chap:resultados}.
 
 
 
@@ -66,7 +63,7 @@ Por fim, foi construída a Tabela \ref{tab:dados_experimento} que contém o temp
   \rowcolor[HTML]{FFFFFF} 
   -                         & -                         & -                         & -                         & -                    & 1,27                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
-  +                         & -                         & -                         & -                         & -                    & 1,27                         \\ \hline
+  +                         & -                         & -                         & -                         & -                    & 1,57                         \\ \hline
   \rowcolor[HTML]{FFFFFF} 
   -                         & +                         & -                         & -                         & -                    & 1,10                         \\ \hline
   \rowcolor[HTML]{EFEFEF} 
